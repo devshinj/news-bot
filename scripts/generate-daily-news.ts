@@ -1,7 +1,7 @@
 import './load-env';
 import * as fs from 'fs';
 import * as path from 'path';
-import { fetchNews } from '../src/lib/fetchNews';
+import { fetchAllCategoryNews } from '../src/lib/fetchNews';
 import { summarizeDailyNews } from '../src/lib/summarizeNews';
 import type { DailyNewsData } from '../src/lib/types';
 
@@ -22,9 +22,9 @@ const main = async (): Promise<void> => {
   }
 
   try {
-    // 1. 뉴스 수집
-    console.log('1. Google News RSS에서 뉴스를 수집합니다...');
-    const articles = await fetchNews(10);
+    // 1. 뉴스 수집 (카테고리별 4개씩, 최근 1일)
+    console.log('1. Google News RSS에서 카테고리별 뉴스를 수집합니다...');
+    const articles = await fetchAllCategoryNews(4, 1);
     console.log(`   ${articles.length}개의 뉴스 기사를 수집했습니다.\n`);
 
     // 2. AI 요약 생성

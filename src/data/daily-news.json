@@ -1,94 +1,181 @@
 {
-  "generatedAt": "2026-02-05T08:04:01.315Z",
+  "generatedAt": "2026-02-05T08:58:33.935Z",
   "date": "2026-02-05",
   "summary": {
-    "overview": "오늘 정치적 갈등과 공천 의혹이 주요 뉴스로 다뤄졌다.",
+    "overview": "오늘은 과학 연구와 경제 정책, IT 보안 이슈가 주요 뉴스로 다뤄졌다.",
     "highlights": [
-      "장동혁, 재신임 요구 강조",
-      "명태균·김영선, 1심 무죄",
-      "강선우·김경 구속영장 신청",
-      "이 대통령, 정치적 발언",
-      "아프리카돼지열병 우려"
+      "UNIST, 대장암 증식 억제 성공",
+      "마이크로소프트, 맥OS 악성코드 경고",
+      "CJ제일제당, 설탕·밀가루 가격 인하",
+      "이 대통령, 고물가 대응 방안 발표"
     ],
     "categories": [
       {
-        "name": "정치",
-        "summary": "정치적 갈등과 법적 이슈가 부각되고 있다.",
+        "name": "IT/과학",
+        "summary": "과학 연구와 IT 보안 관련 뉴스가 주를 이룬다.",
         "keyTopics": [
-          "재신임",
-          "구속영장"
+          "대장암",
+          "악성코드"
         ]
       },
       {
-        "name": "사회",
-        "summary": "아프리카돼지열병과 관련된 우려가 커지고 있다.",
+        "name": "경제",
+        "summary": "CJ제일제당의 가격 인하와 정부의 고물가 대응이 주요 이슈.",
         "keyTopics": [
-          "돼지열병",
-          "구제역"
+          "가격 인하",
+          "고물가"
+        ]
+      },
+      {
+        "name": "정치",
+        "summary": "이 대통령의 경제 정책 발표가 주목받고 있다.",
+        "keyTopics": [
+          "경제 정책",
+          "공권력"
         ]
       }
     ]
   },
   "articles": [
     {
-      "title": "장동혁 “정치생명 걸고 재신임 요구하라...당원 투표 결과 따를 것”",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92QmlVT3ZYbEVOeGVFYjZ1TXlaN3JLTjlDQVc2YlhNaDlpRUEtLXBXOG5wUUkyRWxTQ1k0ZTFoSC1VbHhURzRQZ2FTR0NqSGtPd245SDNLbFlUNER2ZWpObnlpZ1Q0Uk5aYWZKUHN5WU1NTzNx?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 06:51:00 GMT",
-      "source": "한겨레"
+      "title": "UNIST, 암세포의 복제 스트레스 관리자 없애자 대장암 증식이 멈췄다",
+      "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxPMjdsYlRXREJXaGE4ejZWc0RYRkppZ3VxZ2MxNWJDRjcxSEFzSGdzNTJNalVWS21Bb1NtRjdsOHRUcGtDVVFseG8zMkIzODZ1N1liWi1NbnVxYkRFUW5KUU5HV0hULS04RWFrcUp4TkZKLTJnWTM5b1JOUFR2bzJfMlNnUk14WkxIcTV3ZC1xVjVzVFI3VjU1VG03LUw0WUVNRVdxNlNxdV9vTmJvaV8xaWpscDFLTnV3Zl9NYkxKbnJ4RlRHd191dXBheHJxV25XTWtBZGtXNEw0dHFmamNkS05BS2hJeU1CTmFMZ2tGa1hialpmTVppSThiekt5N2kySkNvb1d3cmZ5c3U3S2xCbWJHYTgyTGZsU1Nod1lBX3BEMV9sWFl2Z2x5emFlSzNLZ215X0pZTDBjWkkxWGJUN0huUldaMlFFLV9MaUhiYjZ5aVJZ?oc=5",
+      "pubDate": "2026-02-05T08:40:46.000Z",
+      "source": "MIT 테크놀로지 리뷰",
+      "category": "종합"
+    },
+    {
+      "title": "마이크로소프트, 파이썬 정보 탈취 악성코드의 맥OS 노린 위장 광고 경고",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5yNG04VjVtbnZ1U0hyQmdSelFrNW5kLUhHTmNqTF80Qmlmd0JfWHU0Q0FBeEpMQlZyUjVoQzVBNTBqd0pPUFFJT0U0NktpX2JKZV9hY1pCaFhCWTlHZ1g4?oc=5",
+      "pubDate": "2026-02-05T08:23:11.000Z",
+      "source": "헬로티",
+      "category": "종합"
+    },
+    {
+      "title": "[방송소식] 지수·서인국 넷플 신작 '월간 남친' 내달 공개",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBjeEo2MTZDTlctM01DbEwxNHEtU2hJeHYxeG5uRVdjaUxkN3I1Q0Q0NlBJX0VmSkRLNkxCUGZxczRKdXRkR2Rwa2tJdnI5RVJiMndfVC1QN01wR2_SAWBBVV95cUxOQnZ4LTdfWEIzcGttV0pLUUxlRm1zbThxXzVqaHV4VTRqYk02MUdMeDhpZ2ZhMVRfVE4wLU5aYnVBZHNxZUNoYjlPbDVjei1sWkhsM04xRXh2eEQ1c0V4NUo?oc=5",
+      "pubDate": "2026-02-05T08:20:46.000Z",
+      "source": "연합뉴스",
+      "category": "종합"
+    },
+    {
+      "title": "만성 신경통, '미토콘드리아 보충해주면 완화된다'",
+      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1CcXFNTnIyZU8zLWVDQzVFR0ZoSmxEQXB3YUoxdWZSSHBUUlZsWlYtejR2QlhkZ1hNc2VXcDVZaEhvZ05Y?oc=5",
+      "pubDate": "2026-02-05T08:06:00.000Z",
+      "source": "후생신보",
+      "category": "종합"
+    },
+    {
+      "title": "“파킨슨병은 뇌 부위 아닌 ‘네트워크’ 고장... 치료 효과 2.5배 높일 길 열렸다”",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNTFlwWXgwNzNRYnFQZFlwMVcwN3NmOXV0eThhM2NWaDNkeDcxTTdNWHpjUmtpY2thLS1zY1VVcndBMmRiZFZ1YTZDVkZpSkwtMmpSUW5FVXlnV2MtVDRQMTJKZXpjZllpV0NhTkhiMU10V2RDclliWHJBWmNzOWktS1ZjMNIBlwFBVV95cUxQazB4YmZyOTVNSUFSaHA4c29haUhva1ZwLTRpbjRuLVZ4emhCUDNuaUxwN2xiaVVTZ29zQnNCSXZvS2U3emZ4X0Q3MF9mRkJpWUdUZWloZWs4WVExQUY4MzU1NzRpeklBVU5zZDFNaFJTd05wOVZqRG1ySnNMUXFleGQzdDlfYzJxUTdVVDVTT2FrbHZ6YmNR?oc=5",
+      "pubDate": "2026-02-05T08:03:01.000Z",
+      "source": "조선일보",
+      "category": "종합"
+    },
+    {
+      "title": "'담합 의혹' CJ제일제당, 설탕·밀가루 가격 내린다",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4yMk9lYlhCekVGWUZreEgyMGJDSVgxYVE1ajZrNDlXaEpsaDUtOVRxSGN2M1hINThlNTJEbVRXSkN6S0JSYU9aUEpoRUlIemRFN1ZyYm1n?oc=5",
+      "pubDate": "2026-02-05T07:36:14.000Z",
+      "source": "지디넷코리아",
+      "category": "종합"
+    },
+    {
+      "title": "손아섭, 드디어 한화와 계약... 1년 1억원에 잔류",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSTFvS3RXTmJQMjRBOFNlb1oxOHNKVmFrWTc2UWpaMnVOc3hpOTB2U0FVZ1IzcExTbWV1X29oTGpHcS1LQWRYNXpTSlllMno3RTM2UER6OGlheURDY2pCWWhMRHo3dkExaWhqY0Q5bldWdTJtN2Z5S2xGbmRNTnRDQVY2Z9IBlwFBVV95cUxQcWJqVEc1TUdvSnFQMXZQS0xCaExsbmtrR0YzTXVfVkNjcFJTbXUwYUcyaUVZZFkwcmtKTTRPZnpHYXlIMml1YTFnNTlDNUl3YloyWnM1MWZZNlRjRVpHR1FnZE9hdF82bm1vcUxvM19QcVI4RmRuZ0VLa2pqZjFZWkRYMjhmQy1rUm1uXzY1a0kzRnV1eU1v?oc=5",
+      "pubDate": "2026-02-05T07:34:00.000Z",
+      "source": "조선일보",
+      "category": "종합"
+    },
+    {
+      "title": "[기고] 인공지능기본법 시행 이후 과제는",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA4SXNIRDdibFl1WE1TcXdhdVNvTWs5NFBsdlMycnpWV0hMMHRmak5DejRaMGVWOUNVSEJKeFZOUHNKbFlZNTdxVHlrQ3JaeW95XzZydXpB?oc=5",
+      "pubDate": "2026-02-05T07:25:00.000Z",
+      "source": "지디넷코리아",
+      "category": "종합"
+    },
+    {
+      "title": "이 대통령, “고물가에 국가 공권력 총동원…가격조정 명령제도 활용”",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9MSVl3MGZxdEVFU0ZUZFJUMU1sSG9GZVZreWVwYkw4dHBQMEhjbXBaVC1FN2JVdlRQNUo0dHhTaV96S3BuNEpvcjA3ZTFxNTZvYnFfalF3RkdBUdIBX0FVX3lxTE5MZHVJMTlhV1l5MW9abjdJclEyQ2pJbzJxX2NvaFkwNGtzOHZfdVNuYnZQcUQ5RFpaQ2pNTWdWNy10MUJOQU1aR01helAyeFplYnczdXhqaDl1NTdTZ1ZZ?oc=5",
+      "pubDate": "2026-02-05T07:23:00.000Z",
+      "source": "경향신문",
+      "category": "종합"
+    },
+    {
+      "title": "‘55세’ 이서진 “태어나 처음으로 ‘이것’ 계획 중”… 뭘까?",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5lUGVmXzhlNW8tODdfMTQ0N2RULUlFLXplWHEtZVY3bThRclN1bVYybXJxUlVybk5NNzcyUVNlSjE2cmVFZnJ2bFVLdmlyNXowQmdnYnVGSWtISmNqWmZFRG1MNmdzTU9QcVFfTlA1VU4xcGtMX3c?oc=5",
+      "pubDate": "2026-02-05T07:23:00.000Z",
+      "source": "조선일보",
+      "category": "종합"
+    },
+    {
+      "title": "54세 네덜란드 왕비 입대... 권총 사격에 행군까지",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVWtHc0E5eGRDMFhlQWZTLWY4N1VXTndhM3dMdHNPMzJzYlk3blFCalVXWnNuaS1tZ2tiN2hWZjBSLXAwTFhBMjNCLWR0VldKSTJYMHJqeTJWTHlUNERGZ3NXUDlVNXhDWUVDaDc2eGJDbHFhc1dNNEtUM1VINS1PMnQ4cC1WRFdiUDEzOGFCQkF6TXBBNVlRVlZzRldfZ9IBsgFBVV95cUxPTnpRUmZRZVA2X1d1UUlqRHV2XzhyX1ZLOURHT0MtUVVrcm0yLWRNUE5NMWp0TnFOTWJIamVUblVDaGpsa0hSQjhkN01IOXEtWEZNUmpuZTctNFBEODk5ek8tVUpjVnAyNGgybG0tZXlRdVNsdk5OeldKYWFWUS1nbExBZE9XOFhMNWZwQjhwNVdBOXJrbFBUX1Y3NkxGUWVKbHV5dlZaZ0ZHdzl4QlVRRHpB?oc=5",
+      "pubDate": "2026-02-05T07:22:00.000Z",
+      "source": "조선일보",
+      "category": "종합"
+    },
+    {
+      "title": "박지현, 23일 데뷔 후 첫 정규 ‘MASTER VOICE’ 발매",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBCTF8xNlhtUFNMVUc0eWxGYkNaQmZsNmNmb082N3RRVmtRSEJxZXFqUk96TEphZHppLVMwVmNhbzlieEF2TGZLS1NBLXJlcDZO?oc=5",
+      "pubDate": "2026-02-05T07:17:59.000Z",
+      "source": "문화일보",
+      "category": "종합"
+    },
+    {
+      "title": "오포 차세대 폴더블폰 '파인드 N6' 출시 '초읽기'",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBOMlJ4YUNDaEswOS1QaHZ1clJVZEdTZUJxa3RHSTBCN0Mzd2ZLSUpycVNlMktEV0FEODk5OVI5S0VIbjEzMHlSSw?oc=5",
+      "pubDate": "2026-02-05T07:16:01.000Z",
+      "source": "케이벤치",
+      "category": "종합"
+    },
+    {
+      "title": "與, 공소청에 ‘보완수사요구권’만 인정…중수청 조직 일원화",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVDllanB0SDdEdGp2elBEcTl5ZkJFNU0teHpnZWtBN05NeDJTQnhLUmd2dDlNTUl1NXd6RWxRaGU1cnhnNE5zS2h1N3k2azFpM3ZzeEZLajhjS3RXTzVRWHB0MHR6SWtFd0JzTlBxckJZR1NHczFRQ0E3TjNWTjUteHFPV09wZ9IBmgFBVV95cUxOMWJ6YmszQ0Y3R2t6VFRvT0ZWeDRLQ3dVOUVTU1EzVDZtWmRDZTRSV0c4LWdGTkFsSnhpcDFOMzFBMm54azFvazNnM2RGQVM0SUw4MWZzd0hjczIxOVhiOGEzNEN1RXNvMktnMWY3eTlsSU41cWE2czNiWGVfelJLaEpuQmFnM3lvWERRSUhUSnFIQ2JQeWg0eUtn?oc=5",
+      "pubDate": "2026-02-05T06:31:00.000Z",
+      "source": "조선일보",
+      "category": "종합"
+    },
+    {
+      "title": "[단독] 위성락 “핵잠·농축·재처리 미국 협상팀 이미 한국 왔어야…관세 축 흔들려 이 상황 생겨”",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVZXVuLUp4dUxYcmFMY0JOZS16dFRCaldFcUx5T2tWMDJUemhPbGp2OVlacTQ4RkhzVDYwMWJuZm5KbDYzS1dhemNfUjRpY1dSN2djdkhNT29Kd9IBX0FVX3lxTE1Qc0VMV2RBanBZajFVcEZUelFNQnBoQ2ZCeC1DdFlCbk1RMkctbTNkYVpHNjhpZG54dEVieXlXejV5ZkVTUmpJLUtmV090R3paSXBtU0tXLTNNYnVubHNF?oc=5",
+      "pubDate": "2026-02-05T06:07:00.000Z",
+      "source": "경향신문",
+      "category": "종합"
+    },
+    {
+      "title": "[속보] 대법관 후보 추천된 윤성식 부장판사, 고법 내란전담재판부로",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9Id3pjb1ZPdkpvak9PMDhrUXo4S1RYWmFSblQxZ2ZaT0N1WTRPY3lwSW5BWWZMTEdMbkxKcG9JeGY2MmhsZV84dkhHb25WUm1mcEJrUw?oc=5",
+      "pubDate": "2026-02-05T05:50:40.000Z",
+      "source": "매일경제",
+      "category": "종합"
+    },
+    {
+      "title": "[2026년 2월5일(목)] 오이·애호박·딸기·상추·시금치 경락값 분석",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9mUUF3bnpIbEEwUERwQld3VnppWVNhVGdVb1lITXVPN0RZR3FGa0Jrb1Y3dGpOZTJ0U1JGSFpsbjhsbjRUb20tVW5iSXZwZjdvS0RYYVEwSFNGZw?oc=5",
+      "pubDate": "2026-02-05T05:48:00.000Z",
+      "source": "농민신문",
+      "category": "종합"
     },
     {
       "title": "‘공천 대가 돈 거래 의혹’ 명태균·김영선 1심서 무죄",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPLTJodG52R0lRUExNZHNfQm5hYURMaS1TQTBvc0JEOVhOc2wyOVA5ZDEyRGNqMEZHQm85ZnZwUzRzZGctZmlrN2x3VXVRdkRnTXF5NVZobnpYVkxuYlpGSG91Mmx6cU9tOFduMjVaczdRaTdhVlR3dFp3Mk40S0t0WnNPYW5RZ9IBmgFBVV95cUxQenNwYXJZRVRrenc2NDd6NUsxOEgzcnZsOWZDMnBGZzJFOVRjQ1NMX29TWHV3MjFpWkFKRUU1LXBHSGJxZmRfY3J0cURMdTF4RnpOLWlsSXdaUjdPTWVWTDNaaldlR0x6eF9UOWdhM2Rucmc4RTN6TzNTU25WUkhVMjg4c2p2b0VvLTRJckdjcDJNdzU4Vl95TzJR?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 05:18:00 GMT",
-      "source": "조선일보"
+      "pubDate": "2026-02-05T05:18:00.000Z",
+      "source": "조선일보",
+      "category": "종합"
     },
     {
-      "title": "경찰, 강선우·김경 구속영장 신청…‘1억 공천헌금’ 혐의",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBaNkxaLU15YUFlcjBCT2JxUmhLU2U5dDNmMXpTUmxnV3FMQ1ZzalBjRnhPSlFkQXNaWUZ0Qm42aFJMREtMaUZrZ3FscmJHMXdCblJEb2VlUHJXYmtvMFI4QVVfMXUyc1pWeVJENXRvZGZDUQ?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 03:26:00 GMT",
-      "source": "한겨레"
+      "title": "[영상] 2026 서울패션위크 한나신 런웨이",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBWbEt4OFJiM25SYm5DYkZ1NWtianBSSDVlLUJORVhGeUhpRHVzUEJxT3BqVGFnRzlQRTVmSFZ3cWFrd2kwLXlXelFPeGRrMHFrNm1nOXNQdWlndlBWM2duREotNUpidjdwR2JmcXJEdk9WWWhsTjJSX3diSQ?oc=5",
+      "pubDate": "2026-02-05T05:07:44.000Z",
+      "source": "뉴데일리",
+      "category": "종합"
     },
     {
-      "title": "李대통령 “똘똘한 한채? 안 하는 게 이익일 것”",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaEZYUl9xV05laThDNjdXYmFPV0hneUVpbEJuanBXUi1yS1Z4dlZhT05pbnc0VlI1TGtkRGVFeFRiaXVpNFdjTWtQMHlNeDV6MXBJUTFsZmxGRXZ4ZS1HOXd5WUxPNVZrT0JCZEVPYzJZMm9wRHRnSFVPaGo4bEZSeVZEM05WVGlQ0gGcAUFVX3lxTFB0TWEyei14VldyWEVkU3pQbWhxUmQ2U2pBZl9OdWJnVXQyQ0FGOEZULWRvUGRnSmxQWVlUU2FQenNGZEdBMllIaXdTQjZNNW5kMjJLRHZDci1rOEpvRzVnbXFTMzZWdkN1Q20tUUpLR0NCN1k2WVBWY2g3NnBEclNEdEpZSHlNWXBZMkJRYmdUMVNCWk9CTFY2elFidg?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 00:39:00 GMT",
-      "source": "조선일보"
-    },
-    {
-      "title": "아프리카돼지열병 청정구역 무너져…“구제역도 우려”",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE92VGxuam9OU3FBeXJTTUJkc3JpTFVxNmtBR0lmbHB6bmtMcEhzNnFEYU1QT0V0Ui1zQk94bjdydzlNanFrZ29Sbml2YUhiLUVWRFBfUTJMSnBfSUZkQUN0MXdXZEduZw?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 00:24:00 GMT",
-      "source": "KBS 뉴스"
-    },
-    {
-      "title": "이 대통령 “‘윗 어르신 얘기’로 변조까지 하더니”…검찰 ‘위례’ 항소 포기에 여당 “조작 기소 밝힐 것”",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE10RzhDd3l0ZGZjbG1tZ2NlaFpXbFZmZENOQU9vU1B5M2NtZ0t6TnVJVi1feTF4dlFKcEIwNV9UVWNscGZlRlQwVjN1Q3pybzlXMXRWNUV2OXRIUdIBX0FVX3lxTFAwLXROZ3lzWEtGc29sRjVEVXlEcU02SVJrT1NvM1k1enZkak1OeEhJZDFKcTdNYXFvdFN0YjRXWHB1TDdMTkpoYV9ZV0NJWi1tUkt4VzF6SnYxQ1JoaW0w?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 06:13:00 GMT",
-      "source": "경향신문"
-    },
-    {
-      "title": "오늘 중 내란전담재판부 확정...윤석열 '평양 무인기' 재판 계속",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9HaEhudUdYQ0QtY1VCNzBMQUxTOTlKaUFIaWNuZTMtUFBrZTZDOUNGcXVZUnRiUXpuSFF2SkJlMVJQZVlTQnliLWRPbGFqWlB1anhENHJKYVBtODltZlHSAYMBQVVfeXFMTnhlcTluZTlvQXJkMDNSaVVnQzl4Qnd4NkNhVjh2NnJVRkcxZ0wxVlhUNnRwN2pscnNiWFZIWVdteWRzUzJJeUNHMmZDb3VTRi05eGoxVWJhcGhBdWZJSlQ1eXVRQXl3eEtGYS0xSk5VZWlLb0NMX1M5QUNvMjlHaTdUdmc?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 00:28:00 GMT",
-      "source": "YTN"
-    },
-    {
-      "title": "우원식 “‘지방선거-개헌 동시 투표’ 국민투표법, 설 전후가 개정 시한”",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1HODF6XzBLRFM2dTlHX2ktdXhnbmtiRkM1QThBUERVdHBMMElSbW4wbmJ4dFRfMGhMZXFUaUY0TGszT0RQX0l2aGpzOFVtdjR3LVQtNnpLUjBMdU1HVkI5Tmc2YU1jZlZ2TUl5QWdCeHl0MFdp?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 04:48:00 GMT",
-      "source": "한겨레"
-    },
-    {
-      "title": "감사원 개혁 의지 있나?…김혜경 여사 보좌 임선숙 감사위원 ‘속전속결’ 취임",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9rWEY5Qk1iQ0VxVEpiLWZxb1NUTEJhY3UwblZjUE1weVBpNnlOazhsNHpjZkYwTjJHYko1eTAzcWVrd0FHZVk2dDk3V01uM0NWZUVORlJTVlROWW9kalNZS3FqcTJKLXI1VnF6NGgzb0RYZEFL?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 06:23:00 GMT",
-      "source": "한겨레"
-    },
-    {
-      "title": "내일부터 다시 추워요…오늘은 낮 최고 15도, 미세먼지도",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0a1kwZk9TNm5rLUp4bHhPZk8wXzUyZVJnSC1jZmNPanQ1V3VDQzFVY09IUk1aTWUzNlVkeDBWVGtmY0FXZHdJeDJESWlFQndwUmw4ZzVJbVVXU25ySDVCQ01BYktZOXBGb08tRw?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 01:58:00 GMT",
-      "source": "한겨레"
+      "title": "삼성, 동남아에 20만원대 갤럭시 A07 출시…동남아 1위 탈환",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE4zdWtsRXZZejN4OFZHbTJaa1JvMmlITVdFWUpwYWNOcVB3SVVwT2NFY1huamRLRnFubUkwZTVqd2doY1BsYjV2V3pZU2gydw?oc=5",
+      "pubDate": "2026-02-05T04:15:43.000Z",
+      "source": "전자신문",
+      "category": "종합"
     }
   ]
 }

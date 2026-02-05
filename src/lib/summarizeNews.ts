@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.LOCAL_OPENAI_API_KEY ?? process.env.OPENAI_API_KEY,
 });
 
-const FIXED_CATEGORIES = ['정치', '사회', '국제', 'IT/과학', '문화/스포츠'] as const;
+const FIXED_CATEGORIES = ['정치', '경제', '사회', '국제', 'IT/과학'] as const;
 
 const SUMMARY_RULES = `[규칙]
 - overview: 전체 동향을 1~2문장(80자 내외)으로만 요약. 한 문장에 하나의 메시지.
@@ -14,8 +14,23 @@ const SUMMARY_RULES = `[규칙]
 - 각 category의 summary: 1문장(50자 내외). keyTopics: 2~3개, 각 10자 내외 키워드.
 - 수치·인명은 핵심일 때만 포함. 독자가 30초 안에 요지를 파악할 수 있도록 간결하게.`;
 
+const parseSummaryJson = <T>(content: string): T => {
+  const cleaned = content.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+  try {
+    return JSON.parse(cleaned) as T;
+  } catch {
+    const repaired = cleaned.replace(/,(\s*[}\]])/g, '$1').trim();
+    return JSON.parse(repaired) as T;
+  }
+};
+
+const buildHeadlines = (newsItems: NewsItem[]): string =>
+  newsItems
+    .map((item, i) => `${i + 1}. ${item.title} (${item.source})\n- ${item.link}`)
+    .join('\n\n');
+
 export const summarizeNews = async (newsItems: NewsItem[]): Promise<NewsSummary> => {
-  const headlines = newsItems.map((item, index) => `${index + 1}. ${item.title} (${item.source})`).join('\n');
+  const headlines = buildHeadlines(newsItems);
 
   const prompt = `다음은 이번 주 주요 뉴스 헤드라인입니다:
 
@@ -53,8 +68,9 @@ JSON만 반환하고 다른 텍스트는 포함하지 마세요.`;
           content: prompt,
         },
       ],
-      temperature: 0.7,
+      temperature: 0.2,
       max_tokens: 2000,
+      response_format: { type: 'json_object' },
     });
 
     const content = response.choices[0]?.message?.content;
@@ -62,10 +78,7 @@ JSON만 반환하고 다른 텍스트는 포함하지 마세요.`;
       throw new Error('OpenAI 응답이 비어있습니다.');
     }
 
-    const cleanedContent = content.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    const summary: NewsSummary = JSON.parse(cleanedContent);
-
-    return summary;
+    return parseSummaryJson<NewsSummary>(content);
   } catch (error) {
     console.error('뉴스 요약 중 오류 발생:', error);
     throw error;
@@ -80,7 +93,7 @@ const DAILY_SUMMARY_RULES = `[규칙]
 - 수치·인명은 핵심일 때만 포함. 30초 안에 요지만 파악 가능하도록 간결하게.`;
 
 export const summarizeDailyNews = async (newsItems: NewsItem[]): Promise<DailySummary> => {
-  const headlines = newsItems.map((item, index) => `${index + 1}. ${item.title} (${item.source})`).join('\n');
+  const headlines = buildHeadlines(newsItems);
 
   const prompt = `다음은 오늘의 주요 뉴스 헤드라인입니다:
 
@@ -118,8 +131,9 @@ JSON만 반환하고 다른 텍스트는 포함하지 마세요.`;
           content: prompt,
         },
       ],
-      temperature: 0.7,
+      temperature: 0.2,
       max_tokens: 1500,
+      response_format: { type: 'json_object' },
     });
 
     const content = response.choices[0]?.message?.content;
@@ -127,10 +141,7 @@ JSON만 반환하고 다른 텍스트는 포함하지 마세요.`;
       throw new Error('OpenAI 응답이 비어있습니다.');
     }
 
-    const cleanedContent = content.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    const summary: DailySummary = JSON.parse(cleanedContent);
-
-    return summary;
+    return parseSummaryJson<DailySummary>(content);
   } catch (error) {
     console.error('데일리 뉴스 요약 중 오류 발생:', error);
     throw error;

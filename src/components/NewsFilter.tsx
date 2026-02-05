@@ -8,8 +8,16 @@ interface NewsFilterProps {
   articles: NewsItem[];
 }
 
+const CATEGORY_ORDER = ['정치', '경제', '사회', '국제', 'IT/과학', '종합'] as const;
+
 export const NewsFilter = ({ articles }: NewsFilterProps) => {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSource, setSelectedSource] = useState<string>('all');
+
+  const categories = useMemo(() => {
+    const categorySet = new Set(articles.map((article) => article.category).filter(Boolean));
+    return CATEGORY_ORDER.filter((cat) => categorySet.has(cat));
+  }, [articles]);
 
   const sources = useMemo(() => {
     const sourceSet = new Set(articles.map((article) => article.source));
@@ -17,17 +25,33 @@ export const NewsFilter = ({ articles }: NewsFilterProps) => {
   }, [articles]);
 
   const filteredArticles = useMemo(() => {
-    if (selectedSource === 'all') {
-      return articles;
+    let result = articles;
+    if (selectedCategory !== 'all') {
+      result = result.filter((article) => article.category === selectedCategory);
     }
-    return articles.filter((article) => article.source === selectedSource);
-  }, [articles, selectedSource]);
+    if (selectedSource !== 'all') {
+      result = result.filter((article) => article.source === selectedSource);
+    }
+    return result;
+  }, [articles, selectedCategory, selectedSource]);
 
-  const handleFilterClick = (source: string) => {
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    setSelectedSource('all');
+  };
+
+  const handleSourceClick = (source: string) => {
     setSelectedSource(source);
   };
 
-  const handleFilterKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, source: string) => {
+  const handleCategoryKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, category: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleCategoryClick(category);
+    }
+  };
+
+  const handleSourceKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, source: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       setSelectedSource(source);
@@ -37,36 +61,80 @@ export const NewsFilter = ({ articles }: NewsFilterProps) => {
   return (
     <section aria-labelledby="articles-heading">
       <h2 id="articles-heading" className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
-        이번 주 뉴스 기사
+        뉴스 기사
       </h2>
 
+      {categories.length > 0 && (
+        <div className="mb-4" role="group" aria-label="뉴스 카테고리 필터">
+          <p className="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">카테고리</p>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => handleCategoryClick('all')}
+              onKeyDown={(e) => handleCategoryKeyDown(e, 'all')}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 ${
+                selectedCategory === 'all'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+              }`}
+              aria-pressed={selectedCategory === 'all'}
+              tabIndex={0}
+            >
+              전체 ({articles.length})
+            </button>
+            {categories.map((category) => {
+              const count = articles.filter((a) => a.category === category).length;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => handleCategoryClick(category)}
+                  onKeyDown={(e) => handleCategoryKeyDown(e, category)}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 ${
+                    selectedCategory === category
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                  }`}
+                  aria-pressed={selectedCategory === category}
+                  tabIndex={0}
+                >
+                  {category} ({count})
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       <div className="mb-6" role="group" aria-label="뉴스 출처 필터">
+        <p className="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">출처</p>
         <div className="flex flex-wrap gap-2">
           <button
             type="button"
-            onClick={() => handleFilterClick('all')}
-            onKeyDown={(e) => handleFilterKeyDown(e, 'all')}
+            onClick={() => handleSourceClick('all')}
+            onKeyDown={(e) => handleSourceKeyDown(e, 'all')}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 ${
               selectedSource === 'all'
-                ? 'bg-blue-600 text-white shadow-md'
+                ? 'bg-green-600 text-white shadow-md'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
             }`}
             aria-pressed={selectedSource === 'all'}
             tabIndex={0}
           >
-            전체 ({articles.length})
+            전체
           </button>
           {sources.map((source) => {
-            const count = articles.filter((a) => a.source === source).length;
+            const count = filteredArticles.filter((a) => a.source === source).length;
+            if (selectedCategory !== 'all' && count === 0) return null;
             return (
               <button
                 key={source}
                 type="button"
-                onClick={() => handleFilterClick(source)}
-                onKeyDown={(e) => handleFilterKeyDown(e, source)}
+                onClick={() => handleSourceClick(source)}
+                onKeyDown={(e) => handleSourceKeyDown(e, source)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 ${
                   selectedSource === source
-                    ? 'bg-blue-600 text-white shadow-md'
+                    ? 'bg-green-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
                 }`}
                 aria-pressed={selectedSource === source}

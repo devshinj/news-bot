@@ -38,7 +38,12 @@ export const NewsCard = ({ article }: NewsCardProps) => {
         <h3 className="mb-3 text-lg font-semibold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400">
           {article.title}
         </h3>
-        <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          {article.category && (
+            <span className="inline-flex items-center rounded-full bg-purple-50 px-3 py-1 font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+              {article.category}
+            </span>
+          )}
           <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
             {article.source}
           </span>
