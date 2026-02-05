@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-02-05T08:04:01.315Z",
+  "date": "2026-02-05",
+  "summary": {
+    "overview": "오늘 정치적 갈등과 공천 의혹이 주요 뉴스로 다뤄졌다.",
+    "highlights": [
+      "장동혁, 재신임 요구 강조",
+      "명태균·김영선, 1심 무죄",
+      "강선우·김경 구속영장 신청",
+      "이 대통령, 정치적 발언",
+      "아프리카돼지열병 우려"
+    ],
+    "categories": [
+      {
+        "name": "정치",
+        "summary": "정치적 갈등과 법적 이슈가 부각되고 있다.",
+        "keyTopics": [
+          "재신임",
+          "구속영장"
+        ]
+      },
+      {
+        "name": "사회",
+        "summary": "아프리카돼지열병과 관련된 우려가 커지고 있다.",
+        "keyTopics": [
+          "돼지열병",
+          "구제역"
+        ]
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "장동혁 “정치생명 걸고 재신임 요구하라...당원 투표 결과 따를 것”",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92QmlVT3ZYbEVOeGVFYjZ1TXlaN3JLTjlDQVc2YlhNaDlpRUEtLXBXOG5wUUkyRWxTQ1k0ZTFoSC1VbHhURzRQZ2FTR0NqSGtPd245SDNLbFlUNER2ZWpObnlpZ1Q0Uk5aYWZKUHN5WU1NTzNx?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 06:51:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "‘공천 대가 돈 거래 의혹’ 명태균·김영선 1심서 무죄",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPLTJodG52R0lRUExNZHNfQm5hYURMaS1TQTBvc0JEOVhOc2wyOVA5ZDEyRGNqMEZHQm85ZnZwUzRzZGctZmlrN2x3VXVRdkRnTXF5NVZobnpYVkxuYlpGSG91Mmx6cU9tOFduMjVaczdRaTdhVlR3dFp3Mk40S0t0WnNPYW5RZ9IBmgFBVV95cUxQenNwYXJZRVRrenc2NDd6NUsxOEgzcnZsOWZDMnBGZzJFOVRjQ1NMX29TWHV3MjFpWkFKRUU1LXBHSGJxZmRfY3J0cURMdTF4RnpOLWlsSXdaUjdPTWVWTDNaaldlR0x6eF9UOWdhM2Rucmc4RTN6TzNTU25WUkhVMjg4c2p2b0VvLTRJckdjcDJNdzU4Vl95TzJR?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 05:18:00 GMT",
+      "source": "조선일보"
+    },
+    {
+      "title": "경찰, 강선우·김경 구속영장 신청…‘1억 공천헌금’ 혐의",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBaNkxaLU15YUFlcjBCT2JxUmhLU2U5dDNmMXpTUmxnV3FMQ1ZzalBjRnhPSlFkQXNaWUZ0Qm42aFJMREtMaUZrZ3FscmJHMXdCblJEb2VlUHJXYmtvMFI4QVVfMXUyc1pWeVJENXRvZGZDUQ?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 03:26:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "李대통령 “똘똘한 한채? 안 하는 게 이익일 것”",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaEZYUl9xV05laThDNjdXYmFPV0hneUVpbEJuanBXUi1yS1Z4dlZhT05pbnc0VlI1TGtkRGVFeFRiaXVpNFdjTWtQMHlNeDV6MXBJUTFsZmxGRXZ4ZS1HOXd5WUxPNVZrT0JCZEVPYzJZMm9wRHRnSFVPaGo4bEZSeVZEM05WVGlQ0gGcAUFVX3lxTFB0TWEyei14VldyWEVkU3pQbWhxUmQ2U2pBZl9OdWJnVXQyQ0FGOEZULWRvUGRnSmxQWVlUU2FQenNGZEdBMllIaXdTQjZNNW5kMjJLRHZDci1rOEpvRzVnbXFTMzZWdkN1Q20tUUpLR0NCN1k2WVBWY2g3NnBEclNEdEpZSHlNWXBZMkJRYmdUMVNCWk9CTFY2elFidg?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:39:00 GMT",
+      "source": "조선일보"
+    },
+    {
+      "title": "아프리카돼지열병 청정구역 무너져…“구제역도 우려”",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE92VGxuam9OU3FBeXJTTUJkc3JpTFVxNmtBR0lmbHB6bmtMcEhzNnFEYU1QT0V0Ui1zQk94bjdydzlNanFrZ29Sbml2YUhiLUVWRFBfUTJMSnBfSUZkQUN0MXdXZEduZw?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:24:00 GMT",
+      "source": "KBS 뉴스"
+    },
+    {
+      "title": "이 대통령 “‘윗 어르신 얘기’로 변조까지 하더니”…검찰 ‘위례’ 항소 포기에 여당 “조작 기소 밝힐 것”",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE10RzhDd3l0ZGZjbG1tZ2NlaFpXbFZmZENOQU9vU1B5M2NtZ0t6TnVJVi1feTF4dlFKcEIwNV9UVWNscGZlRlQwVjN1Q3pybzlXMXRWNUV2OXRIUdIBX0FVX3lxTFAwLXROZ3lzWEtGc29sRjVEVXlEcU02SVJrT1NvM1k1enZkak1OeEhJZDFKcTdNYXFvdFN0YjRXWHB1TDdMTkpoYV9ZV0NJWi1tUkt4VzF6SnYxQ1JoaW0w?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 06:13:00 GMT",
+      "source": "경향신문"
+    },
+    {
+      "title": "오늘 중 내란전담재판부 확정...윤석열 '평양 무인기' 재판 계속",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9HaEhudUdYQ0QtY1VCNzBMQUxTOTlKaUFIaWNuZTMtUFBrZTZDOUNGcXVZUnRiUXpuSFF2SkJlMVJQZVlTQnliLWRPbGFqWlB1anhENHJKYVBtODltZlHSAYMBQVVfeXFMTnhlcTluZTlvQXJkMDNSaVVnQzl4Qnd4NkNhVjh2NnJVRkcxZ0wxVlhUNnRwN2pscnNiWFZIWVdteWRzUzJJeUNHMmZDb3VTRi05eGoxVWJhcGhBdWZJSlQ1eXVRQXl3eEtGYS0xSk5VZWlLb0NMX1M5QUNvMjlHaTdUdmc?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:28:00 GMT",
+      "source": "YTN"
+    },
+    {
+      "title": "우원식 “‘지방선거-개헌 동시 투표’ 국민투표법, 설 전후가 개정 시한”",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1HODF6XzBLRFM2dTlHX2ktdXhnbmtiRkM1QThBUERVdHBMMElSbW4wbmJ4dFRfMGhMZXFUaUY0TGszT0RQX0l2aGpzOFVtdjR3LVQtNnpLUjBMdU1HVkI5Tmc2YU1jZlZ2TUl5QWdCeHl0MFdp?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 04:48:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "감사원 개혁 의지 있나?…김혜경 여사 보좌 임선숙 감사위원 ‘속전속결’ 취임",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9rWEY5Qk1iQ0VxVEpiLWZxb1NUTEJhY3UwblZjUE1weVBpNnlOazhsNHpjZkYwTjJHYko1eTAzcWVrd0FHZVk2dDk3V01uM0NWZUVORlJTVlROWW9kalNZS3FqcTJKLXI1VnF6NGgzb0RYZEFL?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 06:23:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "내일부터 다시 추워요…오늘은 낮 최고 15도, 미세먼지도",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0a1kwZk9TNm5rLUp4bHhPZk8wXzUyZVJnSC1jZmNPanQ1V3VDQzFVY09IUk1aTWUzNlVkeDBWVGtmY0FXZHdJeDJESWlFQndwUmw4ZzVJbVVXU25ySDVCQ01BYktZOXBGb08tRw?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 01:58:00 GMT",
+      "source": "한겨레"
+    }
+  ]
+}

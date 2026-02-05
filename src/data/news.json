@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-02-05T08:03:52.454Z",
+  "weekStart": "2026-01-29",
+  "weekEnd": "2026-02-05",
+  "summary": {
+    "overview": "이번 주 정치적 갈등이 심화되고, 재신임 요구와 공천 헌금 의혹이 주목받고 있다.",
+    "highlights": [
+      "장동혁, 재신임 요구 발표",
+      "명태균·김영선, 무죄 판결",
+      "강선우·김경 구속영장 신청",
+      "이 대통령, 정치적 발언",
+      "미·러 핵군축조약 종료"
+    ],
+    "categories": [
+      {
+        "name": "정치",
+        "summary": "정치권 내 갈등과 사건들이 부각되고 있다.",
+        "keyTopics": [
+          "재신임",
+          "공천 헌금",
+          "무죄 판결"
+        ]
+      },
+      {
+        "name": "사회",
+        "summary": "사회적 이슈와 사건들이 대두되고 있다.",
+        "keyTopics": [
+          "강선우",
+          "헌금",
+          "법적 절차"
+        ]
+      },
+      {
+        "name": "국제",
+        "summary": "국제적인 군축 조약 종료가 큰 영향을 미친다.",
+        "keyTopics": [
+          "핵군축",
+          "미·러",
+          "조약 종료"
+        ]
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "장동혁 “정치생명 걸고 재신임 요구하라...당원 투표 결과 따를 것”",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92QmlVT3ZYbEVOeGVFYjZ1TXlaN3JLTjlDQVc2YlhNaDlpRUEtLXBXOG5wUUkyRWxTQ1k0ZTFoSC1VbHhURzRQZ2FTR0NqSGtPd245SDNLbFlUNER2ZWpObnlpZ1Q0Uk5aYWZKUHN5WU1NTzNx?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 06:51:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "‘공천 대가 돈 거래 의혹’ 명태균·김영선 1심서 무죄",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPLTJodG52R0lRUExNZHNfQm5hYURMaS1TQTBvc0JEOVhOc2wyOVA5ZDEyRGNqMEZHQm85ZnZwUzRzZGctZmlrN2x3VXVRdkRnTXF5NVZobnpYVkxuYlpGSG91Mmx6cU9tOFduMjVaczdRaTdhVlR3dFp3Mk40S0t0WnNPYW5RZ9IBmgFBVV95cUxQenNwYXJZRVRrenc2NDd6NUsxOEgzcnZsOWZDMnBGZzJFOVRjQ1NMX29TWHV3MjFpWkFKRUU1LXBHSGJxZmRfY3J0cURMdTF4RnpOLWlsSXdaUjdPTWVWTDNaaldlR0x6eF9UOWdhM2Rucmc4RTN6TzNTU25WUkhVMjg4c2p2b0VvLTRJckdjcDJNdzU4Vl95TzJR?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 05:18:00 GMT",
+      "source": "조선일보"
+    },
+    {
+      "title": "경찰, 강선우·김경 구속영장 신청…‘1억 공천헌금’ 혐의",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBaNkxaLU15YUFlcjBCT2JxUmhLU2U5dDNmMXpTUmxnV3FMQ1ZzalBjRnhPSlFkQXNaWUZ0Qm42aFJMREtMaUZrZ3FscmJHMXdCblJEb2VlUHJXYmtvMFI4QVVfMXUyc1pWeVJENXRvZGZDUQ?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 03:26:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "李대통령 “똘똘한 한채? 안 하는 게 이익일 것”",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaEZYUl9xV05laThDNjdXYmFPV0hneUVpbEJuanBXUi1yS1Z4dlZhT05pbnc0VlI1TGtkRGVFeFRiaXVpNFdjTWtQMHlNeDV6MXBJUTFsZmxGRXZ4ZS1HOXd5WUxPNVZrT0JCZEVPYzJZMm9wRHRnSFVPaGo4bEZSeVZEM05WVGlQ0gGcAUFVX3lxTFB0TWEyei14VldyWEVkU3pQbWhxUmQ2U2pBZl9OdWJnVXQyQ0FGOEZULWRvUGRnSmxQWVlUU2FQenNGZEdBMllIaXdTQjZNNW5kMjJLRHZDci1rOEpvRzVnbXFTMzZWdkN1Q20tUUpLR0NCN1k2WVBWY2g3NnBEclNEdEpZSHlNWXBZMkJRYmdUMVNCWk9CTFY2elFidg?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:39:00 GMT",
+      "source": "조선일보"
+    },
+    {
+      "title": "아프리카돼지열병 청정구역 무너져…“구제역도 우려”",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE92VGxuam9OU3FBeXJTTUJkc3JpTFVxNmtBR0lmbHB6bmtMcEhzNnFEYU1QT0V0Ui1zQk94bjdydzlNanFrZ29Sbml2YUhiLUVWRFBfUTJMSnBfSUZkQUN0MXdXZEduZw?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:24:00 GMT",
+      "source": "KBS 뉴스"
+    },
+    {
+      "title": "이 대통령 “‘윗 어르신 얘기’로 변조까지 하더니”…검찰 ‘위례’ 항소 포기에 여당 “조작 기소 밝힐 것”",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE10RzhDd3l0ZGZjbG1tZ2NlaFpXbFZmZENOQU9vU1B5M2NtZ0t6TnVJVi1feTF4dlFKcEIwNV9UVWNscGZlRlQwVjN1Q3pybzlXMXRWNUV2OXRIUdIBX0FVX3lxTFAwLXROZ3lzWEtGc29sRjVEVXlEcU02SVJrT1NvM1k1enZkak1OeEhJZDFKcTdNYXFvdFN0YjRXWHB1TDdMTkpoYV9ZV0NJWi1tUkt4VzF6SnYxQ1JoaW0w?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 06:13:00 GMT",
+      "source": "경향신문"
+    },
+    {
+      "title": "오늘 중 내란전담재판부 확정...윤석열 '평양 무인기' 재판 계속",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9HaEhudUdYQ0QtY1VCNzBMQUxTOTlKaUFIaWNuZTMtUFBrZTZDOUNGcXVZUnRiUXpuSFF2SkJlMVJQZVlTQnliLWRPbGFqWlB1anhENHJKYVBtODltZlHSAYMBQVVfeXFMTnhlcTluZTlvQXJkMDNSaVVnQzl4Qnd4NkNhVjh2NnJVRkcxZ0wxVlhUNnRwN2pscnNiWFZIWVdteWRzUzJJeUNHMmZDb3VTRi05eGoxVWJhcGhBdWZJSlQ1eXVRQXl3eEtGYS0xSk5VZWlLb0NMX1M5QUNvMjlHaTdUdmc?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:28:00 GMT",
+      "source": "YTN"
+    },
+    {
+      "title": "우원식 “‘지방선거-개헌 동시 투표’ 국민투표법, 설 전후가 개정 시한”",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1HODF6XzBLRFM2dTlHX2ktdXhnbmtiRkM1QThBUERVdHBMMElSbW4wbmJ4dFRfMGhMZXFUaUY0TGszT0RQX0l2aGpzOFVtdjR3LVQtNnpLUjBMdU1HVkI5Tmc2YU1jZlZ2TUl5QWdCeHl0MFdp?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 04:48:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "감사원 개혁 의지 있나?…김혜경 여사 보좌 임선숙 감사위원 ‘속전속결’ 취임",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9rWEY5Qk1iQ0VxVEpiLWZxb1NUTEJhY3UwblZjUE1weVBpNnlOazhsNHpjZkYwTjJHYko1eTAzcWVrd0FHZVk2dDk3V01uM0NWZUVORlJTVlROWW9kalNZS3FqcTJKLXI1VnF6NGgzb0RYZEFL?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 06:23:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "내일부터 다시 추워요…오늘은 낮 최고 15도, 미세먼지도",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0a1kwZk9TNm5rLUp4bHhPZk8wXzUyZVJnSC1jZmNPanQ1V3VDQzFVY09IUk1aTWUzNlVkeDBWVGtmY0FXZHdJeDJESWlFQndwUmw4ZzVJbVVXU25ySDVCQ01BYktZOXBGb08tRw?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 01:58:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "54세 네덜란드 왕비의 예비군 입대",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVWtHc0E5eGRDMFhlQWZTLWY4N1VXTndhM3dMdHNPMzJzYlk3blFCalVXWnNuaS1tZ2tiN2hWZjBSLXAwTFhBMjNCLWR0VldKSTJYMHJqeTJWTHlUNERGZ3NXUDlVNXhDWUVDaDc2eGJDbHFhc1dNNEtUM1VINS1PMnQ4cC1WRFdiUDEzOGFCQkF6TXBBNVlRVlZzRldfZ9IBsgFBVV95cUxPTnpRUmZRZVA2X1d1UUlqRHV2XzhyX1ZLOURHT0MtUVVrcm0yLWRNUE5NMWp0TnFOTWJIamVUblVDaGpsa0hSQjhkN01IOXEtWEZNUmpuZTctNFBEODk5ek8tVUpjVnAyNGgybG0tZXlRdVNsdk5OeldKYWFWUS1nbExBZE9XOFhMNWZwQjhwNVdBOXJrbFBUX1Y3NkxGUWVKbHV5dlZaZ0ZHdzl4QlVRRHpB?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 04:50:00 GMT",
+      "source": "조선일보"
+    },
+    {
+      "title": "‘핵무기 족쇄’ 사라졌다…미·러 핵군축조약 ‘뉴스타트’, 5일 종료",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdFdMcFJSNThySGNiU01KalVFX0tacVc0WUpNZTZ3TTkyLUlCV24ya3dOeVpjbU9jNlFMRUtmbjNNaG9wdFRlRVBCZDkzVFdxeGo2YnU2NU03MjFNTE93SzZSSTg0M00tVGZnUkZhTHpSLVUxcFRTUEZSR3dLLTB3cE9n?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 00:57:00 GMT",
+      "source": "한겨레"
+    },
+    {
+      "title": "\"트럼프, 조지아주 한국인 근로자 체포 '몰랐다'\"‥단속 배후는 밀러?",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5XaVBoZHN2bWk2YzRnV3VCNHJsQ2N0WUlKR211VmJ1M2hvalZJeGhkdW9NLVpYN0dLNDZ0dEtyYUdPTnZ3UW9abUJXdTN1UERhcmpHTy12OWMxcXVxWHkwa29QbnFDMjlNQW8tazhjS3RYQVQ30gF0QVVfeXFMT013a01hSDItTGR4ZHNONXo3OWc2QWIwcDRIRFZBVFIwT0RwM2JJdklKc0Rfd0VHb3VtOTFKNV9SQVVDUkhUTmd1Rm1EU1RfQnhRY3gwVWJzaE9DSmlCT0pUV1FGc1dqdnRaYXQyQWZCdFpod1o?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 01:00:59 GMT",
+      "source": "MBC 뉴스"
+    },
+    {
+      "title": "택시에서 외국인 커플이 벌인 ‘그 행동’…벌금으로 끝나지 않은 ‘이 나라’ [핫이슈]",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBvRG8xcGIwU1VuWEpYZVY5Nm5HLWhsajRhTjd4bjByV1dEdVl0Y0V0cFA0LXVCcGRhUlNPTHc4ZFppUm50RVFQRjVIVGUyNXNmWHY5bm1mVG05Nm9ubFhFTkpSVm5pWU5DdlBqb3FxbG8?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 01:43:15 GMT",
+      "source": "나우뉴스"
+    },
+    {
+      "title": "3월부터 주택연금 월 수령액 4만원 늘어 133만원…주택 공시가격 12억 기준은 그대로",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNYzhHa3BmdWgxS2JRRTRyTWVUUFk4RjU5enJ1TmIzZTI1NlVWNWNRMnU3aVBjZDBqREtjSUdkOV9CT05jZVNOZ2lUaEZBY0IyTnFwenFjdFlwZEZlcjJxRUNSdjVzMHRnOHhTZWYwSF9ucXVtZmNkdW1aVEt6S3ZITExTdmRmb2hpd3hJN0ZR0gGiAUFVX3lxTFB4TzhDc21TRFZUQ2p0R2NHMG1rQlZVVjZrODZzQTJuV2lyaUJtLWo3YWF6YWttVVB3b3J0ampfN09ITmpNMUt2LWpRY3V5QnUzUkRtSDUtQTh2cUVkZEIwRTZGQ1dkaERoem91TF9sTnBQQmlXdmVRbVB4ZEthM09vREl6S1NveU9lTkNnWFVuUG1manRkSFFNVXBRdUlacWlYUQ?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 03:02:36 GMT",
+      "source": "조선일보"
+    },
+    {
+      "title": "삼성전자·SK하이닉스, HBM4 수율 격차 1.5배…엔비디아 물량 배분 좌우",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMnZtX2ZuS2JkLWw1NE84UDI1MnV2TVQzMDZoeENPeGpQOGhXMmh0RmlIZzgxVVAyTmhQeFRTNjgwRVktYnV3dEt1cDZ5eFVoRnZlMUtEM2RnaHJtZzJpaDhCMzNFNTYxMVVWNndEc3dJY2pxVHhubTJsWXo2cjhUeWZSc1RMd1dr?oc=5",
+      "pubDate": "Wed, 04 Feb 2026 22:07:24 GMT",
+      "source": "글로벌이코노믹"
+    },
+    {
+      "title": "농식품부, “초혁신·모두의 AI농업” 실현 위한 ‘국가 농업AX플랫폼’ 공모",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9iV3lFMTlZbWs2bEdtNjlCSmN3d3VXSDlSQ2xUcnpBb3NOakNZZTZobEF6S1k4OFpUZnItN3BEdTRkRkg4akIxLThibmlnMmhBS3hhbnZLN1hCMmVYQXZxRDdWNHUwdEk?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 03:01:27 GMT",
+      "source": "인공지능신문"
+    },
+    {
+      "title": "LGU+, 작년 영업익 8921억 '전년比 3.4%↑'…무선회선 3000만 돌파",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9ocE1QRktQVUNCTWpMUjduN1RNVk4yeWJwV3dOc2lGaDdJdXNNbU1vazI3WVdERzdYbkp2TU9leC1lTU5TcGdWeVEyaUYzZGMxN3diTzBSS0ZVd2RqVEgzNTdvYVlKdw?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 01:14:50 GMT",
+      "source": "디일렉"
+    },
+    {
+      "title": "아크시스템웍스 아시아 '퇴마탐정 미아즈마 브레이커' 한국어 번역판 출시",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9nVTZ1Y3VOeHBmU0hQNVJJNkxZRVlrVDNKTklRcHZyVDJ2U3pxbVhKcUFkWi1XVy0wMkxoRkRnVGxtS3lHaXM1Rm1RSHJUSlZrQXo4aEdqdGVSclVQVkpUVA?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 05:41:32 GMT",
+      "source": "게임포커스"
+    },
+    {
+      "title": "네오위즈 '브라운더스트 2', 검열 논란의 입장을 밝히다",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBBb1JLVmYwSkJLSWlYNTJab3lMaXJiUEtLbnp1NlJBYndxdDRneFZtVWxTaTltYU9rM0xyeHhYMlE1TGxLV1BzM09ibkZGWGtfLU1ZOFRIVjdfMmRRdzNzYldTaXJQVzVMZVE?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 07:13:04 GMT",
+      "source": "게임뷰"
+    }
+  ]
+}

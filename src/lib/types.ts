@@ -25,3 +25,16 @@ export interface WeeklyNewsData {
   summary: NewsSummary;
   articles: NewsItem[];
 }
+
+export interface DailyNewsData {
+  generatedAt: string;
+  date: string;
+  summary: DailySummary;
+  articles: NewsItem[];
+}
+
+export interface DailySummary {
+  overview: string;
+  highlights: string[];
+  categories: CategorySummary[];
+}

@@ -1,4 +1,4 @@
-# 주간 뉴스 봇 (Weekly News Bot)
+# 뉴스 서머리 봇
 
 Google News RSS와 OpenAI API를 활용하여 매주 주요 뉴스를 자동으로 수집하고 AI가 요약하는 정적 웹사이트입니다.
 
@@ -40,7 +40,8 @@ npm install
 로컬 테스트를 위해 `.env.local` 파일을 생성합니다:
 
 ```bash
-OPENAI_API_KEY=your_openai_api_key_here
+# 로컬 개발용 (GitHub Actions에서는 OPENAI_API_KEY 시크릿 사용)
+LOCAL_OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 ### 4. 뉴스 데이터 생성 (로컬 테스트)

@@ -1,11 +1,22 @@
-import { NewsCard } from '@/components/NewsCard';
 import { NewsSummary } from '@/components/NewsSummary';
-import type { WeeklyNewsData } from '@/lib/types';
+import { DailySummary } from '@/components/DailySummary';
+import { NewsFilter } from '@/components/NewsFilter';
+import { NewsTabsWrapper } from '@/components/NewsTabsWrapper';
+import type { WeeklyNewsData, DailyNewsData } from '@/lib/types';
 
-const getNewsData = async (): Promise<WeeklyNewsData | null> => {
+const getWeeklyNewsData = async (): Promise<WeeklyNewsData | null> => {
   try {
     const data = await import('@/data/news.json');
     return data.default as WeeklyNewsData;
+  } catch {
+    return null;
+  }
+};
+
+const getDailyNewsData = async (): Promise<DailyNewsData | null> => {
+  try {
+    const data = await import('@/data/daily-news.json');
+    return data.default as DailyNewsData;
   } catch {
     return null;
   }
@@ -23,40 +34,63 @@ const formatGeneratedAt = (isoString: string): string => {
 };
 
 const HomePage = async () => {
-  const newsData = await getNewsData();
+  const [weeklyData, dailyData] = await Promise.all([getWeeklyNewsData(), getDailyNewsData()]);
 
-  if (!newsData) {
+  if (!weeklyData && !dailyData) {
     return (
       <div className="flex min-h-[50vh] flex-col items-center justify-center text-center">
         <div className="mb-4 text-6xl" aria-hidden="true">
           📭
         </div>
         <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">아직 뉴스가 없습니다</h2>
-        <p className="text-gray-600 dark:text-gray-400">첫 번째 주간 뉴스 업데이트를 기다려주세요.</p>
-        <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">매주 월요일 오전 9시에 자동으로 업데이트됩니다.</p>
+        <p className="text-gray-600 dark:text-gray-400">첫 번째 뉴스 업데이트를 기다려주세요.</p>
+        <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">매일/매주 자동으로 업데이트됩니다.</p>
       </div>
     );
   }
 
   return (
-    <div>
-      <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-        마지막 업데이트: {formatGeneratedAt(newsData.generatedAt)}
-      </div>
-
-      <NewsSummary summary={newsData.summary} weekStart={newsData.weekStart} weekEnd={newsData.weekEnd} />
-
-      <section aria-labelledby="articles-heading">
-        <h2 id="articles-heading" className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
-          이번 주 뉴스 기사
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {newsData.articles.map((article, index) => (
-            <NewsCard key={index} article={article} />
-          ))}
-        </div>
-      </section>
-    </div>
+    <NewsTabsWrapper
+      weeklyGeneratedAt={weeklyData?.generatedAt ?? null}
+      dailyContent={
+        dailyData ? (
+          <div>
+            <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+              마지막 업데이트: {formatGeneratedAt(dailyData.generatedAt)}
+            </div>
+            <DailySummary summary={dailyData.summary} date={dailyData.date} />
+            <NewsFilter articles={dailyData.articles} />
+          </div>
+        ) : (
+          <div className="flex min-h-[30vh] flex-col items-center justify-center text-center">
+            <div className="mb-4 text-4xl" aria-hidden="true">
+              📅
+            </div>
+            <h2 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">오늘의 뉴스가 없습니다</h2>
+            <p className="text-gray-600 dark:text-gray-400">데일리 뉴스 업데이트를 기다려주세요.</p>
+          </div>
+        )
+      }
+      weeklyContent={
+        weeklyData ? (
+          <div>
+            <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+              마지막 업데이트: {formatGeneratedAt(weeklyData.generatedAt)}
+            </div>
+            <NewsSummary summary={weeklyData.summary} weekStart={weeklyData.weekStart} weekEnd={weeklyData.weekEnd} />
+            <NewsFilter articles={weeklyData.articles} />
+          </div>
+        ) : (
+          <div className="flex min-h-[30vh] flex-col items-center justify-center text-center">
+            <div className="mb-4 text-4xl" aria-hidden="true">
+              📰
+            </div>
+            <h2 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">주간 뉴스가 없습니다</h2>
+            <p className="text-gray-600 dark:text-gray-400">주간 뉴스 업데이트를 기다려주세요.</p>
+          </div>
+        )
+      }
+    />
   );
 };
 
