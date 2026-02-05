@@ -1,3 +1,5 @@
+'use client';
+
 import type { NewsItem } from '@/lib/types';
 
 interface NewsCardProps {
