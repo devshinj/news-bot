@@ -16,6 +16,7 @@ export interface CategorySummary {
   name: string;
   summary: string;
   keyTopics: string[];
+  importance: 'high' | 'medium' | 'low'; // 카테고리별 이슈 중요도
 }
 
 export interface WeeklyNewsData {

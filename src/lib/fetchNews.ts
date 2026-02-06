@@ -85,7 +85,7 @@ const parseRssFeed = async (
     });
 };
 
-export const fetchNews = async (limit: number = 20): Promise<NewsItem[]> => {
+export const fetchNews = async (limit: number = 50): Promise<NewsItem[]> => {
   try {
     const items = await parseRssFeed(RSS_FEEDS.top, 'top', 7);
 
@@ -104,7 +104,7 @@ export const fetchNews = async (limit: number = 20): Promise<NewsItem[]> => {
 
 export const fetchNewsByCategory = async (
   category: CategoryKey,
-  limit: number = 10,
+  limit: number = 20,
   daysAgo: number = 7
 ): Promise<NewsItem[]> => {
   try {
@@ -124,7 +124,7 @@ export const fetchNewsByCategory = async (
 };
 
 export const fetchAllCategoryNews = async (
-  limitPerCategory: number = 5,
+  limitPerCategory: number = 15,
   daysAgo: number = 7
 ): Promise<NewsItem[]> => {
   const categories: CategoryKey[] = ['politics', 'economy', 'society', 'world', 'tech'];

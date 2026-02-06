@@ -40,6 +40,7 @@ const getDailyNewsData = async (): Promise<DailyNewsData | null> => {
 const formatGeneratedAt = (isoString: string): string => {
   const date = new Date(isoString);
   return new Intl.DateTimeFormat('ko-KR', {
+    timeZone: 'Asia/Seoul',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -71,7 +72,7 @@ const HomePage = async () => {
         dailyData ? (
           <div>
             <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-              마지막 업데이트: {formatGeneratedAt(dailyData.generatedAt)}
+              마지막 업데이트: {formatGeneratedAt(dailyData.generatedAt)} (KST)
             </div>
             <DailySummary summary={dailyData.summary} date={dailyData.date} />
             <NewsFilter articles={dailyData.articles} />
@@ -90,7 +91,7 @@ const HomePage = async () => {
         weeklyData ? (
           <div>
             <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-              마지막 업데이트: {formatGeneratedAt(weeklyData.generatedAt)}
+              마지막 업데이트: {formatGeneratedAt(weeklyData.generatedAt)} (KST)
             </div>
             <NewsSummary summary={weeklyData.summary} weekStart={weeklyData.weekStart} weekEnd={weeklyData.weekEnd} />
             <NewsFilter articles={weeklyData.articles} />
