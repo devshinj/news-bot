@@ -124,7 +124,7 @@ export const fetchNewsByCategory = async (
 };
 
 export const fetchAllCategoryNews = async (
-  limitPerCategory: number = 15,
+  limitPerCategory: number = 10,
   daysAgo: number = 7
 ): Promise<NewsItem[]> => {
   const categories: CategoryKey[] = ['politics', 'economy', 'society', 'world', 'tech'];

@@ -7,16 +7,32 @@ const openai = new OpenAI({
 
 const FIXED_CATEGORIES = ['정치', '경제', '사회', '국제', 'IT/과학'] as const;
 
+const ensureAllCategories = <T extends { categories: Array<{ name: string; summary: string; keyTopics: string[]; importance: 'high' | 'medium' | 'low' }> }>(
+  data: T,
+  emptySummaryText: string
+): T => {
+  const byName = new Map(data.categories.map((c) => [c.name, c]));
+  const categories = FIXED_CATEGORIES.map((name) => {
+    const existing = byName.get(name);
+    if (existing) return existing;
+    return {
+      name,
+      summary: emptySummaryText,
+      keyTopics: [] as string[],
+      importance: 'low' as const,
+    };
+  });
+  return { ...data, categories };
+};
+
 const SUMMARY_RULES = `[규칙]
 - overview: 이번 주 전체 동향을 전문 애널리스트 관점에서 2~3문장(150자 내외)으로 요약. 핵심 트렌드와 시사점을 포함.
 - highlights: 가장 중요한 이슈 5~7개. 각 이슈는 30~50자로 구체적으로 작성. 
   * 중요한 수치(금액, 퍼센트, 인원 등)가 있다면 반드시 포함 (예: "삼성전자 영업이익 12조원 달성, 전년比 45% 증가")
   * 수치가 없는 경우 핵심 내용과 영향을 명확히 기술
-- categories: 반드시 "${FIXED_CATEGORIES.join(', ')}" 중 해당 뉴스가 있는 카테고리만 포함. 뉴스가 없는 카테고리는 생략.
-- 각 category:
-  * summary: 해당 분야의 주요 동향을 2문장(80자 내외)으로 전문적으로 분석
-  * keyTopics: 핵심 키워드 3~4개, 각 15자 내외
-  * importance: 해당 카테고리의 이번 주 중요도를 "high"(매우 중요한 이슈 발생), "medium"(주목할 만한 이슈), "low"(평이한 동향) 중 하나로 판단
+- categories: 반드시 "${FIXED_CATEGORIES.join(', ')}" 5개 카테고리 모두 포함. 순서는 정치, 경제, 사회, 국제, IT/과학을 유지.
+  * 해당 카테고리 뉴스가 있으면: summary는 2문장(80자 내외) 전문 분석, keyTopics 3~4개, importance는 "high"|"medium"|"low" 중 판단.
+  * 해당 카테고리 뉴스가 없으면: summary는 "이번 주 해당 분야 수집 뉴스가 없습니다.", keyTopics는 [], importance는 "low".
 - 전문 뉴스 브리핑 수준의 품질로 작성. 독자가 1분 안에 주요 동향을 파악할 수 있도록.`;
 
 const parseSummaryJson = <T>(content: string): T => {
@@ -84,7 +100,8 @@ JSON만 반환하고 다른 텍스트는 포함하지 마세요.`;
       throw new Error('OpenAI 응답이 비어있습니다.');
     }
 
-    return parseSummaryJson<NewsSummary>(content);
+    const parsed = parseSummaryJson<NewsSummary>(content);
+    return ensureAllCategories(parsed, '이번 주 해당 분야 수집 뉴스가 없습니다.');
   } catch (error) {
     console.error('뉴스 요약 중 오류 발생:', error);
     throw error;
@@ -96,11 +113,9 @@ const DAILY_SUMMARY_RULES = `[규칙]
 - highlights: 가장 중요한 이슈 5~7개. 각 이슈는 30~50자로 구체적으로 작성.
   * 중요한 수치(금액, 퍼센트, 인원 등)가 있다면 반드시 포함 (예: "코스피 2,800선 돌파, 외국인 3조원 순매수")
   * 수치가 없는 경우 핵심 내용과 영향을 명확히 기술
-- categories: 반드시 "${FIXED_CATEGORIES.join(', ')}" 중 해당 뉴스가 있는 카테고리만 포함. 뉴스가 없는 카테고리는 생략.
-- 각 category:
-  * summary: 해당 분야의 주요 동향을 2문장(80자 내외)으로 전문적으로 분석
-  * keyTopics: 핵심 키워드 3~4개, 각 15자 내외
-  * importance: 해당 카테고리의 오늘 중요도를 "high"(매우 중요한 이슈 발생), "medium"(주목할 만한 이슈), "low"(평이한 동향) 중 하나로 판단
+- categories: 반드시 "${FIXED_CATEGORIES.join(', ')}" 5개 카테고리 모두 포함. 순서는 정치, 경제, 사회, 국제, IT/과학을 유지.
+  * 해당 카테고리 뉴스가 있으면: summary는 2문장(80자 내외) 전문 분석, keyTopics 3~4개, importance는 "high"|"medium"|"low" 중 판단.
+  * 해당 카테고리 뉴스가 없으면: summary는 "오늘 해당 분야 수집 뉴스가 없습니다.", keyTopics는 [], importance는 "low".
 - 전문 뉴스 브리핑 수준의 품질로 작성. 독자가 1분 안에 주요 동향을 파악할 수 있도록.`;
 
 export const summarizeDailyNews = async (newsItems: NewsItem[]): Promise<DailySummary> => {
@@ -153,7 +168,8 @@ JSON만 반환하고 다른 텍스트는 포함하지 마세요.`;
       throw new Error('OpenAI 응답이 비어있습니다.');
     }
 
-    return parseSummaryJson<DailySummary>(content);
+    const parsed = parseSummaryJson<DailySummary>(content);
+    return ensureAllCategories(parsed, '오늘 해당 분야 수집 뉴스가 없습니다.');
   } catch (error) {
     console.error('데일리 뉴스 요약 중 오류 발생:', error);
     throw error;

@@ -51,9 +51,9 @@ const main = async (): Promise<void> => {
   }
 
   try {
-    // 1. 뉴스 수집 (카테고리별 6개씩, 최근 7일)
+    // 1. 뉴스 수집 (카테고리별 10개씩, 최근 7일)
     console.log('1. Google News RSS에서 카테고리별 뉴스를 수집합니다...');
-    const articles = await fetchAllCategoryNews(6, 7);
+    const articles = await fetchAllCategoryNews(10, 7);
     console.log(`   ${articles.length}개의 뉴스 기사를 수집했습니다.\n`);
 
     // 2. AI 요약 생성
