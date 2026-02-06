@@ -1,22 +1,42 @@
 import './load-env';
-import * as fs from 'fs';
-import * as path from 'path';
 import { fetchAllCategoryNews } from '../src/lib/fetchNews';
 import { summarizeDailyNews } from '../src/lib/summarizeNews';
 import type { DailyNewsData } from '../src/lib/types';
-
-const DATA_DIR = path.join(process.cwd(), 'src', 'data');
-const OUTPUT_FILE = path.join(DATA_DIR, 'daily-news.json');
 
 const formatDate = (date: Date): string => {
   return date.toISOString().split('T')[0];
 };
 
+const saveToApi = async (data: DailyNewsData): Promise<void> => {
+  const apiUrl = process.env.API_URL;
+  const apiKey = process.env.NEWS_API_KEY;
+
+  if (!apiUrl || !apiKey) {
+    throw new Error('API_URL 또는 NEWS_API_KEY 환경 변수가 설정되지 않았습니다.');
+  }
+
+  const response = await fetch(`${apiUrl}/api/news/daily`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`API 저장 실패: ${response.status} - ${error}`);
+  }
+
+  console.log('   API를 통해 데이터베이스에 저장되었습니다.');
+};
+
 const main = async (): Promise<void> => {
   console.log('데일리 뉴스 생성을 시작합니다...\n');
 
-  const apiKey = process.env.LOCAL_OPENAI_API_KEY ?? process.env.OPENAI_API_KEY;
-  if (!apiKey) {
+  const openaiKey = process.env.LOCAL_OPENAI_API_KEY ?? process.env.OPENAI_API_KEY;
+  if (!openaiKey) {
     console.error('오류: LOCAL_OPENAI_API_KEY 또는 OPENAI_API_KEY 환경 변수가 설정되지 않았습니다.');
     process.exit(1);
   }
@@ -40,15 +60,11 @@ const main = async (): Promise<void> => {
       articles,
     };
 
-    // 4. 데이터 저장
+    // 4. API를 통해 데이터베이스에 저장
     console.log('3. 뉴스 데이터를 저장합니다...');
-    if (!fs.existsSync(DATA_DIR)) {
-      fs.mkdirSync(DATA_DIR, { recursive: true });
-    }
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(dailyNewsData, null, 2), 'utf-8');
-    console.log(`   저장 완료: ${OUTPUT_FILE}\n`);
+    await saveToApi(dailyNewsData);
 
-    console.log('데일리 뉴스 생성이 완료되었습니다!');
+    console.log('\n데일리 뉴스 생성이 완료되었습니다!');
     console.log(`- 날짜: ${dailyNewsData.date}`);
     console.log(`- 기사 수: ${articles.length}개`);
   } catch (error) {

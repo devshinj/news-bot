@@ -1,13 +1,13 @@
 # 뉴스 서머리 봇
 
-Google News RSS와 OpenAI API를 활용하여 매주 주요 뉴스를 자동으로 수집하고 AI가 요약하는 정적 웹사이트입니다.
+Google News RSS와 OpenAI API를 활용하여 매일 주요 뉴스를 자동으로 수집하고 AI가 요약하는 웹사이트입니다.
 
 ## 주요 기능
 
 - **자동 뉴스 수집**: Google News RSS에서 한국어 종합 뉴스를 자동으로 수집
-- **AI 요약**: OpenAI GPT-4o-mini를 사용하여 주간 뉴스 트렌드 분석 및 요약
-- **정적 사이트**: GitHub Pages에 자동 배포되는 정적 웹사이트
-- **주간 자동 업데이트**: GitHub Actions를 통해 매주 월요일 자동 업데이트
+- **AI 요약**: OpenAI GPT-4o-mini를 사용하여 일간/주간 뉴스 트렌드 분석 및 요약
+- **API 기반**: Supabase PostgreSQL DB + Vercel Serverless Functions
+- **매일 자동 업데이트**: GitHub Actions를 통해 매일 오전 10시 자동 업데이트
 
 ## 기술 스택
 
@@ -17,8 +17,10 @@ Google News RSS와 OpenAI API를 활용하여 매주 주요 뉴스를 자동으�
 | 스타일링 | TailwindCSS |
 | 뉴스 수집 | Google News RSS |
 | AI 요약 | OpenAI GPT-4o-mini |
+| 데이터베이스 | Supabase (PostgreSQL) |
+| API 서버 | Vercel Serverless Functions |
 | CI/CD | GitHub Actions |
-| 호스팅 | GitHub Pages |
+| 호스팅 | Vercel |
 
 ## 시작하기
 
@@ -35,19 +37,28 @@ cd news-bot
 npm install
 ```
 
-### 3. 환경 변수 설정
+### 3. Supabase 설정
 
-로컬 테스트를 위해 `.env.local` 파일을 생성합니다:
+1. [Supabase](https://supabase.com)에서 새 프로젝트 생성
+2. SQL Editor에서 `supabase/schema.sql` 실행하여 테이블 생성
+3. Project Settings > API에서 키 확인
+
+### 4. 환경 변수 설정
+
+`.env.local` 파일을 생성합니다:
 
 ```bash
-# 로컬 개발용 (GitHub Actions에서는 OPENAI_API_KEY 시크릿 사용)
-LOCAL_OPENAI_API_KEY=your_openai_api_key_here
-```
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
-### 4. 뉴스 데이터 생성 (로컬 테스트)
+# OpenAI
+LOCAL_OPENAI_API_KEY=your_openai_api_key
 
-```bash
-npm run generate-news
+# API 인증 (임의의 문자열)
+NEWS_API_KEY=your-random-api-key
+API_URL=http://localhost:3000
 ```
 
 ### 5. 개발 서버 실행
@@ -56,40 +67,62 @@ npm run generate-news
 npm run dev
 ```
 
-브라우저에서 [http://localhost:3000/news-bot](http://localhost:3000/news-bot)을 열어 확인합니다.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인합니다.
 
-## GitHub 배포 설정
+### 6. 뉴스 데이터 생성 (로컬 테스트)
 
-### 1. GitHub Secrets 설정
+```bash
+# 데일리 뉴스 생성
+npm run generate-daily
 
-1. GitHub 저장소 페이지에서 **Settings** 탭 클릭
-2. 좌측 메뉴에서 **Secrets and variables** > **Actions** 선택
-3. **New repository secret** 버튼 클릭
-4. 다음 정보 입력:
-   - **Name**: `OPENAI_API_KEY`
-   - **Secret**: OpenAI API 키 입력
-5. **Add secret** 클릭
+# 주간 뉴스 생성
+npm run generate-news
+```
 
-### 2. GitHub Pages 활성화
+## Vercel 배포 설정
 
-1. GitHub 저장소 페이지에서 **Settings** 탭 클릭
-2. 좌측 메뉴에서 **Pages** 선택
-3. **Source** 섹션에서 **GitHub Actions** 선택
+### 1. Vercel 프로젝트 생성
 
-### 3. 첫 번째 배포 실행
+1. [Vercel](https://vercel.com)에서 GitHub 레포지토리 연결
+2. 프로젝트 Import
 
-1. **Actions** 탭 클릭
-2. **Weekly News Update** 워크플로우 선택
-3. **Run workflow** 버튼 클릭
-4. **Run workflow** 확인
+### 2. 환경 변수 설정
 
-배포가 완료되면 `https://YOUR_USERNAME.github.io/news-bot`에서 사이트를 확인할 수 있습니다.
+Vercel Dashboard > Settings > Environment Variables에서 다음 변수 추가:
+
+| 변수명 | 설명 |
+|--------|------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase 프로젝트 URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key |
+| `NEWS_API_KEY` | API 인증용 키 (임의 문자열) |
+
+### 3. GitHub Secrets 설정
+
+GitHub 저장소 > Settings > Secrets and variables > Actions에서 추가:
+
+| Secret 이름 | 설명 |
+|-------------|------|
+| `OPENAI_API_KEY` | OpenAI API 키 |
+| `API_URL` | Vercel 배포 URL (예: https://your-app.vercel.app) |
+| `NEWS_API_KEY` | Vercel에 설정한 것과 동일한 값 |
+
+## API 엔드포인트
+
+| 메서드 | 경로 | 설명 |
+|--------|------|------|
+| GET | `/api/news/daily` | 오늘의 뉴스 조회 |
+| GET | `/api/news/weekly` | 주간 뉴스 조회 |
+| POST | `/api/news/daily` | 데일리 뉴스 저장 (인증 필요) |
+| POST | `/api/news/weekly` | 주간 뉴스 저장 (인증 필요) |
 
 ## 자동 업데이트 스케줄
 
-- **시간**: 매주 월요일 오전 9시 (한국 시간)
-- **내용**: 지난 7일간의 주요 뉴스 수집 및 AI 요약 생성
-- **배포**: GitHub Pages에 자동 배포
+- **시간**: 매일 오전 10시 (한국 시간)
+- **내용**: 
+  - 데일리: 당일 주요 뉴스 수집 및 AI 요약
+  - 주간: 지난 7일간의 주요 뉴스 수집 및 AI 요약
+- **저장**: Supabase PostgreSQL DB
 
 수동으로 업데이트하려면 GitHub Actions에서 **Run workflow** 버튼을 클릭하세요.
 
@@ -102,23 +135,29 @@ news-bot/
 │       └── weekly-news.yml      # GitHub Actions 워크플로우
 ├── src/
 │   ├── app/
+│   │   ├── api/
+│   │   │   └── news/
+│   │   │       ├── daily/route.ts   # 데일리 뉴스 API
+│   │   │       └── weekly/route.ts  # 주간 뉴스 API
 │   │   ├── layout.tsx           # 루트 레이아웃
 │   │   ├── page.tsx             # 메인 페이지
 │   │   └── globals.css          # 전역 스타일
 │   ├── components/
 │   │   ├── NewsCard.tsx         # 뉴스 카드 컴포넌트
-│   │   └── NewsSummary.tsx      # 요약 섹션 컴포넌트
-│   ├── lib/
-│   │   ├── fetchNews.ts         # RSS 뉴스 수집 함수
-│   │   ├── summarizeNews.ts     # OpenAI 요약 함수
-│   │   └── types.ts             # TypeScript 타입 정의
-│   └── data/
-│       └── news.json            # 생성된 뉴스 데이터
+│   │   ├── DailySummary.tsx     # 데일리 요약 컴포넌트
+│   │   └── NewsSummary.tsx      # 주간 요약 컴포넌트
+│   └── lib/
+│       ├── fetchNews.ts         # RSS 뉴스 수집 함수
+│       ├── summarizeNews.ts     # OpenAI 요약 함수
+│       ├── supabase.ts          # Supabase 클라이언트
+│       └── types.ts             # TypeScript 타입 정의
+├── supabase/
+│   └── schema.sql               # DB 스키마
 ├── scripts/
-│   └── generate-news.ts         # 뉴스 수집/요약 스크립트
+│   ├── generate-daily-news.ts   # 데일리 뉴스 생성 스크립트
+│   └── generate-news.ts         # 주간 뉴스 생성 스크립트
 ├── next.config.js               # Next.js 설정
 ├── tailwind.config.ts           # TailwindCSS 설정
-├── tsconfig.json                # TypeScript 설정
 └── package.json                 # 프로젝트 설정
 ```
 
@@ -127,36 +166,12 @@ news-bot/
 | 항목 | 비용 | 비고 |
 |------|------|------|
 | GitHub Actions | 무료 | 퍼블릭 레포 월 2,000분 무료 |
-| GitHub Pages | 무료 | 월 100GB 대역폭 |
+| Vercel | 무료 | Hobby 플랜 |
+| Supabase | 무료 | Free 플랜 (500MB) |
 | Google News RSS | 무료 | 제한 없음 |
-| OpenAI API | ~$0.01/주 | GPT-4o-mini, 20개 뉴스 요약 기준 |
+| OpenAI API | ~$0.01/일 | GPT-4o-mini 기준 |
 
-**월 예상 비용: 약 $0.04 (약 50원)**
-
-## 커스터마이징
-
-### 뉴스 카테고리 변경
-
-`src/lib/fetchNews.ts`에서 RSS URL을 변경하여 다른 카테고리의 뉴스를 수집할 수 있습니다:
-
-```typescript
-// 기술 뉴스
-const RSS_URL = 'https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtdHZHZ0pMVWlnQVAB?hl=ko&gl=KR&ceid=KR:ko';
-
-// 비즈니스 뉴스
-const RSS_URL = 'https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtdHZHZ0pMVWlnQVAB?hl=ko&gl=KR&ceid=KR:ko';
-```
-
-### 업데이트 주기 변경
-
-`.github/workflows/weekly-news.yml`에서 cron 스케줄을 변경합니다:
-
-```yaml
-on:
-  schedule:
-    # 매일 오전 9시 (KST)
-    - cron: '0 0 * * *'
-```
+**월 예상 비용: 약 $0.30 (약 400원)**
 
 ## 라이선스
 

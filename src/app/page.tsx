@@ -4,10 +4,21 @@ import { NewsFilter } from '@/components/NewsFilter';
 import { NewsTabsWrapper } from '@/components/NewsTabsWrapper';
 import type { WeeklyNewsData, DailyNewsData } from '@/lib/types';
 
+const getBaseUrl = () => {
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+};
+
 const getWeeklyNewsData = async (): Promise<WeeklyNewsData | null> => {
   try {
-    const data = await import('@/data/news.json');
-    return data.default as WeeklyNewsData;
+    const res = await fetch(`${getBaseUrl()}/api/news/weekly`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data as WeeklyNewsData | null;
   } catch {
     return null;
   }
@@ -15,8 +26,12 @@ const getWeeklyNewsData = async (): Promise<WeeklyNewsData | null> => {
 
 const getDailyNewsData = async (): Promise<DailyNewsData | null> => {
   try {
-    const data = await import('@/data/daily-news.json');
-    return data.default as DailyNewsData;
+    const res = await fetch(`${getBaseUrl()}/api/news/daily`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data as DailyNewsData | null;
   } catch {
     return null;
   }

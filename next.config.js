@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
-  output: 'export',
+  // Vercel에서는 output: 'export' 불필요 (서버리스 함수 사용)
   images: { unoptimized: true },
-  basePath: isProduction ? '/news-bot' : '',
-  assetPrefix: isProduction ? '/news-bot/' : '',
 };
 
 module.exports = nextConfig;
