@@ -31,8 +31,9 @@ const SUMMARY_RULES = `[규칙]
   * 중요한 수치(금액, 퍼센트, 인원 등)가 있다면 반드시 포함 (예: "삼성전자 영업이익 12조원 달성, 전년比 45% 증가")
   * 수치가 없는 경우 핵심 내용과 영향을 명확히 기술
 - categories: 반드시 "${FIXED_CATEGORIES.join(', ')}" 5개 카테고리 모두 포함. 순서는 정치, 경제, 사회, 국제, IT/과학을 유지.
+  * 각 뉴스 항목 앞의 [카테고리] 표시를 기준으로, 해당 카테고리에 속한 기사가 있으면 반드시 그 카테고리에 대한 실제 요약을 작성.
   * 해당 카테고리 뉴스가 있으면: summary는 2문장(80자 내외) 전문 분석, keyTopics 3~4개, importance는 "high"|"medium"|"low" 중 판단.
-  * 해당 카테고리 뉴스가 없으면: summary는 "이번 주 해당 분야 수집 뉴스가 없습니다.", keyTopics는 [], importance는 "low".
+  * [카테고리]로 표시된 기사가 하나도 없는 카테고리만: summary는 "이번 주 해당 분야 수집 뉴스가 없습니다.", keyTopics는 [], importance는 "low".
 - 전문 뉴스 브리핑 수준의 품질로 작성. 독자가 1분 안에 주요 동향을 파악할 수 있도록.`;
 
 const parseSummaryJson = <T>(content: string): T => {
@@ -47,7 +48,7 @@ const parseSummaryJson = <T>(content: string): T => {
 
 const buildHeadlines = (newsItems: NewsItem[]): string =>
   newsItems
-    .map((item, i) => `${i + 1}. ${item.title} (${item.source})\n- ${item.link}`)
+    .map((item, i) => `${i + 1}. [${item.category ?? '종합'}] ${item.title} (${item.source})\n- ${item.link}`)
     .join('\n\n');
 
 export const summarizeNews = async (newsItems: NewsItem[]): Promise<NewsSummary> => {
@@ -114,8 +115,9 @@ const DAILY_SUMMARY_RULES = `[규칙]
   * 중요한 수치(금액, 퍼센트, 인원 등)가 있다면 반드시 포함 (예: "코스피 2,800선 돌파, 외국인 3조원 순매수")
   * 수치가 없는 경우 핵심 내용과 영향을 명확히 기술
 - categories: 반드시 "${FIXED_CATEGORIES.join(', ')}" 5개 카테고리 모두 포함. 순서는 정치, 경제, 사회, 국제, IT/과학을 유지.
+  * 각 뉴스 항목 앞의 [카테고리] 표시를 기준으로, 해당 카테고리에 속한 기사가 있으면 반드시 그 카테고리에 대한 실제 요약을 작성.
   * 해당 카테고리 뉴스가 있으면: summary는 2문장(80자 내외) 전문 분석, keyTopics 3~4개, importance는 "high"|"medium"|"low" 중 판단.
-  * 해당 카테고리 뉴스가 없으면: summary는 "오늘 해당 분야 수집 뉴스가 없습니다.", keyTopics는 [], importance는 "low".
+  * [카테고리]로 표시된 기사가 하나도 없는 카테고리만: summary는 "오늘 해당 분야 수집 뉴스가 없습니다.", keyTopics는 [], importance는 "low".
 - 전문 뉴스 브리핑 수준의 품질로 작성. 독자가 1분 안에 주요 동향을 파악할 수 있도록.`;
 
 export const summarizeDailyNews = async (newsItems: NewsItem[]): Promise<DailySummary> => {
