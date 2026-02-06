@@ -2,11 +2,11 @@ import Parser from 'rss-parser';
 import type { NewsItem } from './types';
 
 export const RSS_FEEDS = {
-  politics: 'https://news.google.com/rss/search?q=정치&hl=ko&gl=KR&ceid=KR:ko',
-  economy: 'https://news.google.com/rss/search?q=경제&hl=ko&gl=KR&ceid=KR:ko',
-  society: 'https://news.google.com/rss/search?q=사회&hl=ko&gl=KR&ceid=KR:ko',
-  world: 'https://news.google.com/rss/search?q=국제&hl=ko&gl=KR&ceid=KR:ko',
-  tech: 'https://news.google.com/rss/search?q=IT+과학+기술&hl=ko&gl=KR&ceid=KR:ko',
+  politics: 'https://news.google.com/rss/search?q=%EC%A0%95%EC%B9%98&hl=ko&gl=KR&ceid=KR:ko',
+  economy: 'https://news.google.com/rss/search?q=%EA%B2%BD%EC%A0%9C&hl=ko&gl=KR&ceid=KR:ko',
+  society: 'https://news.google.com/rss/search?q=%EC%82%AC%ED%9A%8C&hl=ko&gl=KR&ceid=KR:ko',
+  world: 'https://news.google.com/rss/search?q=%EA%B5%AD%EC%A0%9C&hl=ko&gl=KR&ceid=KR:ko',
+  tech: 'https://news.google.com/rss/search?q=IT+%EA%B3%BC%ED%95%99+%EA%B8%B0%EC%88%A0&hl=ko&gl=KR&ceid=KR:ko',
   top: 'https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko',
 } as const;
 
