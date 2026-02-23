@@ -8,7 +8,7 @@ interface NewsFilterProps {
   articles: NewsItem[];
 }
 
-const CATEGORY_ORDER = ['정치', '경제', '사회', '국제', 'IT/과학', '종합'] as const;
+const CATEGORY_ORDER = ['정치', '경제', '사회', '국제', '종합'] as const;
 
 export const NewsFilter = ({ articles }: NewsFilterProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');

@@ -28,6 +28,7 @@ export const GET = async () => {
       weekEnd: data.week_end,
       summary: data.summary,
       articles: data.articles,
+      column: data.column ?? null,
     };
 
     return NextResponse.json(response);
@@ -65,6 +66,7 @@ export const POST = async (request: NextRequest) => {
           generated_at: body.generatedAt,
           summary: body.summary,
           articles: body.articles,
+          column: body.column ?? null,
         },
         {
           onConflict: 'week_start,week_end',

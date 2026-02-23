@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS daily_news (
   generated_at TIMESTAMPTZ NOT NULL,
   summary JSONB NOT NULL,
   articles JSONB NOT NULL,
+  column JSONB,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -19,9 +20,14 @@ CREATE TABLE IF NOT EXISTS weekly_news (
   generated_at TIMESTAMPTZ NOT NULL,
   summary JSONB NOT NULL,
   articles JSONB NOT NULL,
+  column JSONB,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   UNIQUE(week_start, week_end)
 );
+
+-- 기존 테이블에 column 컬럼 추가 (마이그레이션용)
+-- ALTER TABLE daily_news ADD COLUMN IF NOT EXISTS column JSONB;
+-- ALTER TABLE weekly_news ADD COLUMN IF NOT EXISTS column JSONB;
 
 -- 인덱스 생성 (조회 성능 향상)
 CREATE INDEX IF NOT EXISTS idx_daily_news_date ON daily_news(date DESC);

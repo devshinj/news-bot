@@ -1,5 +1,6 @@
 import { NewsSummary } from '@/components/NewsSummary';
 import { DailySummary } from '@/components/DailySummary';
+import { NewsColumn } from '@/components/NewsColumn';
 import { NewsFilter } from '@/components/NewsFilter';
 import { NewsTabsWrapper } from '@/components/NewsTabsWrapper';
 import type { WeeklyNewsData, DailyNewsData } from '@/lib/types';
@@ -75,6 +76,7 @@ const HomePage = async () => {
               마지막 업데이트: {formatGeneratedAt(dailyData.generatedAt)} (KST)
             </div>
             <DailySummary summary={dailyData.summary} date={dailyData.date} />
+            <NewsColumn column={dailyData.column} scope="daily" />
             <NewsFilter articles={dailyData.articles} />
           </div>
         ) : (
@@ -94,6 +96,7 @@ const HomePage = async () => {
               마지막 업데이트: {formatGeneratedAt(weeklyData.generatedAt)} (KST)
             </div>
             <NewsSummary summary={weeklyData.summary} weekStart={weeklyData.weekStart} weekEnd={weeklyData.weekEnd} />
+            <NewsColumn column={weeklyData.column} scope="weekly" />
             <NewsFilter articles={weeklyData.articles} />
           </div>
         ) : (

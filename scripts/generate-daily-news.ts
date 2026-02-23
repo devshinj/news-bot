@@ -1,7 +1,7 @@
 import './load-env';
 import { fetchAllCategoryNews } from '../src/lib/fetchNews';
-import { summarizeDailyNews } from '../src/lib/summarizeNews';
-import type { DailyNewsData } from '../src/lib/types';
+import { summarizeDailyNews, generateColumn } from '../src/lib/summarizeNews';
+import type { DailyNewsData, NewsColumn } from '../src/lib/types';
 
 const formatDate = (date: Date): string => {
   return date.toISOString().split('T')[0];
@@ -52,21 +52,33 @@ const main = async (): Promise<void> => {
     const summary = await summarizeDailyNews(articles);
     console.log('   요약 생성이 완료되었습니다.\n');
 
-    // 3. 데이터 구성
+    // 3. AI 칼럼 생성
+    console.log('3. OpenAI를 사용하여 칼럼을 생성합니다...');
+    let column: NewsColumn | null = null;
+    try {
+      column = await generateColumn(articles, 'daily');
+      console.log('   칼럼 생성이 완료되었습니다.\n');
+    } catch (columnError) {
+      console.warn('   칼럼 생성 실패 (요약/기사는 그대로 저장됩니다):', columnError);
+    }
+
+    // 4. 데이터 구성
     const dailyNewsData: DailyNewsData = {
       generatedAt: new Date().toISOString(),
       date: formatDate(new Date()),
       summary,
       articles,
+      column,
     };
 
-    // 4. API를 통해 데이터베이스에 저장
-    console.log('3. 뉴스 데이터를 저장합니다...');
+    // 5. API를 통해 데이터베이스에 저장
+    console.log('4. 뉴스 데이터를 저장합니다...');
     await saveToApi(dailyNewsData);
 
     console.log('\n데일리 뉴스 생성이 완료되었습니다!');
     console.log(`- 날짜: ${dailyNewsData.date}`);
     console.log(`- 기사 수: ${articles.length}개`);
+    console.log(`- 칼럼: ${column ? '생성됨' : '없음'}`);
   } catch (error) {
     console.error('뉴스 생성 중 오류가 발생했습니다:', error);
     process.exit(1);

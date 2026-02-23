@@ -25,6 +25,7 @@ export interface WeeklyNewsData {
   weekEnd: string;
   summary: NewsSummary;
   articles: NewsItem[];
+  column?: NewsColumn | null;
 }
 
 export interface DailyNewsData {
@@ -32,10 +33,16 @@ export interface DailyNewsData {
   date: string;
   summary: DailySummary;
   articles: NewsItem[];
+  column?: NewsColumn | null;
 }
 
 export interface DailySummary {
   overview: string;
   highlights: string[];
   categories: CategorySummary[];
+}
+
+export interface NewsColumn {
+  title: string;
+  body: string;
 }

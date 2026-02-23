@@ -6,7 +6,6 @@ export const RSS_FEEDS = {
   economy: 'https://news.google.com/rss/search?q=%EA%B2%BD%EC%A0%9C&hl=ko&gl=KR&ceid=KR:ko',
   society: 'https://news.google.com/rss/search?q=%EC%82%AC%ED%9A%8C&hl=ko&gl=KR&ceid=KR:ko',
   world: 'https://news.google.com/rss/search?q=%EA%B5%AD%EC%A0%9C&hl=ko&gl=KR&ceid=KR:ko',
-  tech: 'https://news.google.com/rss/search?q=TECHNOLOGY+%EA%B3%BC%ED%95%99+%EA%B8%B0%EC%88%A0&hl=ko&gl=KR&ceid=KR:ko',
   top: 'https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko',
 } as const;
 
@@ -17,7 +16,6 @@ const CATEGORY_LABELS: Record<CategoryKey, string> = {
   economy: '경제',
   society: '사회',
   world: '국제',
-  tech: 'IT/과학',
   top: '종합',
 };
 
@@ -127,7 +125,7 @@ export const fetchAllCategoryNews = async (
   limitPerCategory: number = 10,
   daysAgo: number = 7
 ): Promise<NewsItem[]> => {
-  const categories: CategoryKey[] = ['politics', 'economy', 'society', 'world', 'tech'];
+  const categories: CategoryKey[] = ['politics', 'economy', 'society', 'world'];
 
   const results = await Promise.allSettled(
     categories.map((cat) => fetchNewsByCategory(cat, limitPerCategory, daysAgo))

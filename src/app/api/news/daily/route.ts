@@ -27,6 +27,7 @@ export const GET = async () => {
       date: data.date,
       summary: data.summary,
       articles: data.articles,
+      column: data.column ?? null,
     };
 
     return NextResponse.json(response);
@@ -63,6 +64,7 @@ export const POST = async (request: NextRequest) => {
           generated_at: body.generatedAt,
           summary: body.summary,
           articles: body.articles,
+          column: body.column ?? null,
         },
         {
           onConflict: 'date',
